@@ -1,0 +1,6 @@
+com.secondhand.vip.test.app-jetified-annotation-experimental-1.3.0-0 C:\Users\CHI\.gradle\caches\transforms-4\36cbb17861d6a5ca041ded6f689cf1c3\transformed\jetified-annotation-experimental-1.3.0\res
+com.secondhand.vip.test.app-jetified-core-1.5.0-1 C:\Users\CHI\.gradle\caches\transforms-4\5d1c35a6ef6974bfa54eba312c2b4b45\transformed\jetified-core-1.5.0\res
+com.secondhand.vip.test.app-androidTest-2 D:\LADYBUG_fixed_v3\app\build\generated\res\resValues\androidTest\debug
+com.secondhand.vip.test.app-mergeDebugAndroidTestResources-3 D:\LADYBUG_fixed_v3\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.secondhand.vip.test.app-mergeDebugAndroidTestResources-4 D:\LADYBUG_fixed_v3\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.secondhand.vip.test.app-merged_res-5 D:\LADYBUG_fixed_v3\app\build\intermediates\merged_res\debugAndroidTest

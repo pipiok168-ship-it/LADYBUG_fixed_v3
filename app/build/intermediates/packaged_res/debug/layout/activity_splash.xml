@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <!-- LOGO 圖 -->
+    <ImageView
+        android:id="@+id/splashLogo"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="180dp"
+        android:src="@drawable/splash_logo"
+        android:scaleType="fitCenter" />
+
+    <!-- 主標題 -->
+    <TextView
+        android:id="@+id/splashTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/splashLogo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="二手小棧"
+        android:textColor="#D4AF37"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <!-- 副標 -->
+    <TextView
+        android:id="@+id/splashSub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/splashTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="6dp"
+        android:text="Secondhand Market"
+        android:textColor="#AAAAAA"
+        android:textSize="12sp" />
+
+</RelativeLayout>

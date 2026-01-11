@@ -1,0 +1,27 @@
+package com.secondhand.vip
+
+import android.content.Context
+import android.database.Cursor
+import android.net.Uri
+import android.provider.MediaStore
+
+object FileUtils {
+
+    fun getPath(context: Context, uri: Uri): String {
+
+        var result = ""
+        val proj = arrayOf(MediaStore.Images.Media.DATA)
+
+        val cursor: Cursor? =
+            context.contentResolver.query(uri, proj, null, null, null)
+
+        if (cursor != null) {
+            val columnIndex = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA)
+            cursor.moveToFirst()
+            result = cursor.getString(columnIndex)
+            cursor.close()
+        }
+
+        return result
+    }
+}

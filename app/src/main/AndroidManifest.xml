@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.secondhand.vip">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        <!-- Splash -->
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Main -->
+        <activity android:name=".MainActivity" />
+
+        <!-- Login -->
+        <activity android:name=".LoginActivity" />
+
+        <!-- Seller Login -->
+        <activity android:name=".SellerLoginActivity" />
+
+        <!-- Product List -->
+        <activity android:name=".ProductListActivity" />
+
+        <!-- Product Detail -->
+        <activity android:name=".ProductDetailActivity" />
+
+        <!-- Add Product -->
+        <activity android:name=".AddProductActivity" />
+
+    </application>
+
+</manifest>

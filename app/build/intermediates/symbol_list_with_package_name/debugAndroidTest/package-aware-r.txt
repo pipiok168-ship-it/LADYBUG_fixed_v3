@@ -1,0 +1,3 @@
+com.secondhand.vip.test
+style WhiteBackgroundDialogTheme
+style WhiteBackgroundTheme
