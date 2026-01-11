@@ -8,6 +8,9 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.secondhand.vip.adapter.ImagePreviewAdapter
 import com.secondhand.vip.api.ApiClient
 import com.secondhand.vip.api.ApiService
 import com.secondhand.vip.model.Product
@@ -26,8 +29,10 @@ class AddProductActivity : AppCompatActivity() {
     private lateinit var edtDescription: EditText
     private lateinit var btnSelect: Button
     private lateinit var btnSubmit: Button
+    private lateinit var recyclerImages: RecyclerView
 
-    private var imageUri: Uri? = null
+    private val imageUris = mutableListOf<Uri>()
+    private lateinit var imageAdapter: ImagePreviewAdapter
 
     private val api: ApiService =
         ApiClient.retrofit.create(ApiService::class.java)
@@ -36,19 +41,30 @@ class AddProductActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_product)
 
+        // ===== Views =====
         edtName = findViewById(R.id.edtName)
         edtPrice = findViewById(R.id.edtPrice)
         edtDescription = findViewById(R.id.edtDescription)
         btnSelect = findViewById(R.id.btnSelectImages)
         btnSubmit = findViewById(R.id.btnSubmit)
+        recyclerImages = findViewById(R.id.recyclerImages)
 
+        // ===== RecyclerView（橫向圖片預覽）=====
+        imageAdapter = ImagePreviewAdapter(imageUris)
+        recyclerImages.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        recyclerImages.adapter = imageAdapter
+
+        // ===== 選擇多張圖片 =====
         btnSelect.setOnClickListener {
-            val intent = Intent(Intent.ACTION_PICK).apply {
+            val intent = Intent(Intent.ACTION_GET_CONTENT).apply {
                 type = "image/*"
+                putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true)
             }
-            startActivityForResult(intent, 1001)
+            startActivityForResult(Intent.createChooser(intent, "選擇圖片"), 1001)
         }
 
+        // ===== 送出商品（仍用單圖 API，取第一張）=====
         btnSubmit.setOnClickListener {
             submitProduct()
         }
@@ -56,8 +72,22 @@ class AddProductActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
+
         if (requestCode == 1001 && resultCode == Activity.RESULT_OK) {
-            imageUri = data?.data
+            imageUris.clear()
+
+            // 多張
+            val clipData = data?.clipData
+            if (clipData != null) {
+                for (i in 0 until clipData.itemCount) {
+                    imageUris.add(clipData.getItemAt(i).uri)
+                }
+            } else {
+                // 單張
+                data?.data?.let { imageUris.add(it) }
+            }
+
+            imageAdapter.notifyDataSetChanged()
         }
     }
 
@@ -75,9 +105,11 @@ class AddProductActivity : AppCompatActivity() {
         val priceBody = price.toRequest()
         val descBody = desc.toRequest()
 
+        // ⚠️ 目前 API 仍只送「第一張圖」
         var imagePart: MultipartBody.Part? = null
-        if (imageUri != null) {
-            val input = contentResolver.openInputStream(imageUri!!)
+        if (imageUris.isNotEmpty()) {
+            val uri = imageUris.first()
+            val input = contentResolver.openInputStream(uri)
             val tempFile = File(cacheDir, "upload.jpg")
             tempFile.outputStream().use { out -> input?.copyTo(out) }
             val req = RequestBody.create("image/*".toMediaTypeOrNull(), tempFile)

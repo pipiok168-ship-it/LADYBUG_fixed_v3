@@ -4,54 +4,60 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:orientation="vertical"
-        android:padding="16dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
 
+        <!-- 商品名稱 -->
         <EditText
             android:id="@+id/edtName"
-            android:hint="商品名稱"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:hint="商品名稱" />
 
+        <!-- 價格 -->
         <EditText
             android:id="@+id/edtPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:hint="價格"
             android:inputType="number"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_marginTop="8dp" />
 
+        <!-- 描述 -->
         <EditText
             android:id="@+id/edtDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:hint="商品描述"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:minLines="3"
+            android:gravity="top"
+            android:layout_marginTop="8dp" />
 
-        <!-- ⭐ 圖片預覽（水平） -->
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:layout_marginTop="12dp">
-
-            <LinearLayout
-                android:id="@+id/layoutImages"
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"/>
-        </HorizontalScrollView>
-
+        <!-- 選擇圖片（多張） -->
         <Button
             android:id="@+id/btnSelectImages"
-            android:text="選擇圖片（可多張）"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="選擇圖片（可多張）"
+            android:layout_marginTop="12dp" />
 
+        <!-- 圖片預覽 RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerImages"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="8dp"
+            android:overScrollMode="never" />
+
+        <!-- 送出 -->
         <Button
             android:id="@+id/btnSubmit"
-            android:text="送出商品"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="送出商品"
+            android:layout_marginTop="16dp" />
 
     </LinearLayout>
 </ScrollView>
