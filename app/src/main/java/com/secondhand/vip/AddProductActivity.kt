@@ -1,12 +1,11 @@
 package com.secondhand.vip
 
-import android.app.Activity
-import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -17,6 +16,8 @@ import com.secondhand.vip.model.Product
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
+import okhttp3.RequestBody.Companion.asRequestBody
+import okhttp3.RequestBody.Companion.toRequestBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -27,71 +28,53 @@ class AddProductActivity : AppCompatActivity() {
     private lateinit var edtName: EditText
     private lateinit var edtPrice: EditText
     private lateinit var edtDescription: EditText
-    private lateinit var btnSelect: Button
+    private lateinit var btnSelectImages: Button
     private lateinit var btnSubmit: Button
     private lateinit var recyclerImages: RecyclerView
 
-    private val imageUris = mutableListOf<Uri>()
-    private lateinit var imageAdapter: ImagePreviewAdapter
+    private val selectedUris = mutableListOf<Uri>()
+    private lateinit var previewAdapter: ImagePreviewAdapter
 
-    private val api: ApiService =
-        ApiClient.retrofit.create(ApiService::class.java)
+    private val api: ApiService = ApiClient.retrofit.create(ApiService::class.java)
+
+    // ✅ 多選圖片（系統檔案選擇器）
+    private val pickImagesLauncher =
+        registerForActivityResult(ActivityResultContracts.OpenMultipleDocuments()) { uris ->
+            selectedUris.clear()
+            if (!uris.isNullOrEmpty()) {
+                selectedUris.addAll(uris)
+            }
+            previewAdapter.notifyDataSetChanged()
+        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_product)
 
-        // ===== Views =====
         edtName = findViewById(R.id.edtName)
         edtPrice = findViewById(R.id.edtPrice)
         edtDescription = findViewById(R.id.edtDescription)
-        btnSelect = findViewById(R.id.btnSelectImages)
+        btnSelectImages = findViewById(R.id.btnSelectImages)
         btnSubmit = findViewById(R.id.btnSubmit)
         recyclerImages = findViewById(R.id.recyclerImages)
 
-        // ===== RecyclerView（橫向圖片預覽）=====
-        imageAdapter = ImagePreviewAdapter(imageUris)
+        // ✅ 預覽 RecyclerView（橫向）
+        previewAdapter = ImagePreviewAdapter(selectedUris)
         recyclerImages.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        recyclerImages.adapter = imageAdapter
+        recyclerImages.adapter = previewAdapter
 
-        // ===== 選擇多張圖片 =====
-        btnSelect.setOnClickListener {
-            val intent = Intent(Intent.ACTION_GET_CONTENT).apply {
-                type = "image/*"
-                putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true)
-            }
-            startActivityForResult(Intent.createChooser(intent, "選擇圖片"), 1001)
+        btnSelectImages.setOnClickListener {
+            // 只挑圖片
+            pickImagesLauncher.launch(arrayOf("image/*"))
         }
 
-        // ===== 送出商品（仍用單圖 API，取第一張）=====
         btnSubmit.setOnClickListener {
-            submitProduct()
+            submitProductMulti()
         }
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-
-        if (requestCode == 1001 && resultCode == Activity.RESULT_OK) {
-            imageUris.clear()
-
-            // 多張
-            val clipData = data?.clipData
-            if (clipData != null) {
-                for (i in 0 until clipData.itemCount) {
-                    imageUris.add(clipData.getItemAt(i).uri)
-                }
-            } else {
-                // 單張
-                data?.data?.let { imageUris.add(it) }
-            }
-
-            imageAdapter.notifyDataSetChanged()
-        }
-    }
-
-    private fun submitProduct() {
+    private fun submitProductMulti() {
         val name = edtName.text.toString().trim()
         val price = edtPrice.text.toString().trim()
         val desc = edtDescription.text.toString().trim()
@@ -101,38 +84,62 @@ class AddProductActivity : AppCompatActivity() {
             return
         }
 
-        val nameBody = name.toRequest()
-        val priceBody = price.toRequest()
-        val descBody = desc.toRequest()
-
-        // ⚠️ 目前 API 仍只送「第一張圖」
-        var imagePart: MultipartBody.Part? = null
-        if (imageUris.isNotEmpty()) {
-            val uri = imageUris.first()
-            val input = contentResolver.openInputStream(uri)
-            val tempFile = File(cacheDir, "upload.jpg")
-            tempFile.outputStream().use { out -> input?.copyTo(out) }
-            val req = RequestBody.create("image/*".toMediaTypeOrNull(), tempFile)
-            imagePart = MultipartBody.Part.createFormData("image", tempFile.name, req)
+        if (selectedUris.isEmpty()) {
+            Toast.makeText(this, "請至少選擇 1 張圖片", Toast.LENGTH_SHORT).show()
+            return
         }
 
-        api.addProduct(nameBody, priceBody, descBody, imagePart)
+        val nameBody = name.toRequestBody("text/plain".toMediaTypeOrNull())
+        val priceBody = price.toRequestBody("text/plain".toMediaTypeOrNull())
+        val descBody = desc.toRequestBody("text/plain".toMediaTypeOrNull())
+
+        // ✅ 轉成 Multipart（對齊後端：upload.array("images", 10)）
+        val imageParts = mutableListOf<MultipartBody.Part>()
+
+        try {
+            selectedUris.forEachIndexed { index, uri ->
+                val tempFile = copyUriToTempFile(uri, "upload_${System.currentTimeMillis()}_$index.jpg")
+                val reqBody = tempFile.asRequestBody("image/*".toMediaTypeOrNull())
+
+                // ⭐ 這個 key 一定要是 "images"
+                val part = MultipartBody.Part.createFormData(
+                    "images",
+                    tempFile.name,
+                    reqBody
+                )
+                imageParts.add(part)
+            }
+        } catch (e: Exception) {
+            Toast.makeText(this, "圖片處理失敗：${e.message}", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        api.addProductMulti(nameBody, priceBody, descBody, imageParts)
             .enqueue(object : Callback<Product> {
                 override fun onResponse(call: Call<Product>, response: Response<Product>) {
                     if (response.isSuccessful) {
                         Toast.makeText(this@AddProductActivity, "商品新增成功", Toast.LENGTH_SHORT).show()
                         finish()
                     } else {
-                        Toast.makeText(this@AddProductActivity, "新增失敗", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@AddProductActivity, "新增失敗（${response.code()}）", Toast.LENGTH_SHORT).show()
                     }
                 }
 
                 override fun onFailure(call: Call<Product>, t: Throwable) {
-                    Toast.makeText(this@AddProductActivity, "連線失敗", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@AddProductActivity, "連線失敗：${t.message}", Toast.LENGTH_SHORT).show()
                 }
             })
     }
-}
 
-private fun String.toRequest(): RequestBody =
-    RequestBody.create("text/plain".toMediaTypeOrNull(), this)
+    // ✅ 不用 PathUtil：把 Uri 內容複製成 app cache 的暫存檔再上傳（最穩）
+    private fun copyUriToTempFile(uri: Uri, fileName: String): File {
+        val tempFile = File(cacheDir, fileName)
+        contentResolver.openInputStream(uri).use { input ->
+            requireNotNull(input) { "無法讀取圖片：$uri" }
+            tempFile.outputStream().use { output ->
+                input.copyTo(output)
+            }
+        }
+        return tempFile
+    }
+}
