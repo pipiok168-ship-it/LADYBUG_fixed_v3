@@ -1,20 +1,15 @@
 package com.secondhand.vip
 
-import android.app.Activity
 import android.os.Bundle
-import android.widget.*
-import androidx.appcompat.app.AlertDialog
+import android.widget.ImageView
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.secondhand.vip.adapter.ProductImageAdapter
-import com.secondhand.vip.api.ApiClient
-import com.secondhand.vip.api.ApiService
+import com.secondhand.vip.adapter.ImageThumbAdapter
 import com.secondhand.vip.model.Product
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class ProductDetailActivity : AppCompatActivity() {
 
@@ -22,112 +17,78 @@ class ProductDetailActivity : AppCompatActivity() {
     private lateinit var recyclerThumbs: RecyclerView
     private lateinit var txtName: TextView
     private lateinit var txtPrice: TextView
-    private lateinit var txtDescription: TextView
-    private lateinit var btnContact: Button
-    private lateinit var btnDelete: Button
+    private lateinit var txtDesc: TextView
+    private lateinit var imgFavorite: ImageView
 
-    private lateinit var api: ApiService
     private lateinit var product: Product
+    private var isFavorite = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_product_detail)
-
-        // ===== API =====
-        api = ApiClient.retrofit.create(ApiService::class.java)
 
         // ===== Views =====
         imgMain = findViewById(R.id.imgMain)
         recyclerThumbs = findViewById(R.id.recyclerThumbs)
         txtName = findViewById(R.id.txtName)
         txtPrice = findViewById(R.id.txtPrice)
-        txtDescription = findViewById(R.id.txtDescription)
-        btnContact = findViewById(R.id.btnContact)
-        btnDelete = findViewById(R.id.btnDelete)
+        txtDesc = findViewById(R.id.txtDescription)
+        imgFavorite = findViewById(R.id.imgFavorite)
 
-        // ===== Product =====
+        // ⭐ 防止點擊冒泡（關鍵）
+        imgFavorite.isClickable = true
+        imgFavorite.isFocusable = true
+
+        // ===== 取得商品 =====
         product = intent.getSerializableExtra("product") as Product
 
-        txtName.text = product.name ?: ""
-        txtPrice.text = "NT$ ${product.price ?: 0}"
-        txtDescription.text = product.description ?: ""
+        txtName.text = product.name
+        txtPrice.text = "NT$ ${product.price}"
+        txtDesc.text = product.description
 
-        // ===== 多圖來源（正式版，向下相容）=====
-        val images = mutableListOf<String>()
-        if (product.imageUrls.isNotEmpty()) {
-            images.addAll(product.imageUrls)
-        } else {
-            product.imageUrl?.let { images.add(it) }
-        }
+        // ===== 圖片來源（多圖優先，單圖備援）=====
+        val images =
+            if (product.imageUrls.isNotEmpty()) product.imageUrls
+            else listOfNotNull(product.imageUrl)
 
-        // ===== 預設大圖 =====
         if (images.isNotEmpty()) {
             Glide.with(this)
                 .load(images[0])
-                .centerCrop()
                 .into(imgMain)
         }
 
-        // ===== 小圖 RecyclerView =====
+        // ===== 縮圖列表 =====
         recyclerThumbs.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
-        recyclerThumbs.adapter = ProductImageAdapter(images) { clickedUrl ->
-            Glide.with(this)
-                .load(clickedUrl)
-                .centerCrop()
-                .into(imgMain)
+        recyclerThumbs.adapter = ImageThumbAdapter(images) { url ->
+            Glide.with(this).load(url).into(imgMain)
         }
 
-        // ===== 聯絡賣家（BottomSheet）=====
-        btnContact.setOnClickListener {
-            ContactSellerBottomSheet().show(
-                supportFragmentManager,
-                "ContactSellerBottomSheet"
-            )
-        }
+        // ===== 收藏（目前 UI 狀態）=====
+        updateFavoriteIcon()
 
-        // ===== 刪除商品 =====
-        btnDelete.setOnClickListener {
-            AlertDialog.Builder(this)
-                .setTitle("刪除商品")
-                .setMessage("確定要刪除這個商品嗎？")
-                .setPositiveButton("刪除") { _, _ ->
-                    product._id?.let { deleteProduct(it) }
-                }
-                .setNegativeButton("取消", null)
-                .show()
+        imgFavorite.setOnClickListener {
+            // 吃掉點擊，不往父層傳
+            it.isPressed = false
+
+            isFavorite = !isFavorite
+            updateFavoriteIcon()
+
+            Toast.makeText(
+                this,
+                if (isFavorite) "已加入收藏" else "已取消收藏",
+                Toast.LENGTH_SHORT
+            ).show()
         }
     }
 
-    // ===== 刪除商品 API =====
-    private fun deleteProduct(id: String) {
-        api.deleteProduct(id).enqueue(object : Callback<Void> {
-            override fun onResponse(call: Call<Void>, response: Response<Void>) {
-                if (response.isSuccessful) {
-                    Toast.makeText(
-                        this@ProductDetailActivity,
-                        "商品已刪除",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                    setResult(Activity.RESULT_OK)
-                    finish()
-                } else {
-                    Toast.makeText(
-                        this@ProductDetailActivity,
-                        "刪除失敗",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-            }
-
-            override fun onFailure(call: Call<Void>, t: Throwable) {
-                Toast.makeText(
-                    this@ProductDetailActivity,
-                    "連線失敗",
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
-        })
+    private fun updateFavoriteIcon() {
+        imgFavorite.setImageResource(
+            if (isFavorite)
+                R.drawable.ic_favorite_border
+            else
+                R.drawable.ic_favorite_border
+        )
     }
 }
