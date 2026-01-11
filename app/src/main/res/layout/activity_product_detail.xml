@@ -8,7 +8,7 @@
     <ImageView
         android:id="@+id/imgMain"
         android:layout_width="match_parent"
-        android:layout_height="260dp"
+        android:layout_height="220dp"
         android:scaleType="centerCrop"
         android:background="#DDDDDD" />
 
@@ -16,7 +16,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerThumbs"
         android:layout_width="match_parent"
-        android:layout_height="90dp"
+        android:layout_height="80dp"
         android:padding="8dp"
         android:overScrollMode="never" />
 
@@ -32,6 +32,7 @@
             android:orientation="vertical"
             android:padding="16dp">
 
+            <!-- 商品名稱 -->
             <TextView
                 android:id="@+id/txtName"
                 android:layout_width="match_parent"
@@ -39,6 +40,7 @@
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
+            <!-- 價格 -->
             <TextView
                 android:id="@+id/txtPrice"
                 android:layout_width="match_parent"
@@ -46,11 +48,30 @@
                 android:textSize="18sp"
                 android:layout_marginTop="8dp" />
 
+            <!-- 描述 -->
             <TextView
                 android:id="@+id/txtDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp" />
+
+            <!-- 聯絡賣家 -->
+            <Button
+                android:id="@+id/btnContact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="聯絡賣家"
+                android:layout_marginTop="16dp" />
+
+            <!-- 刪除商品（紅色） -->
+            <Button
+                android:id="@+id/btnDelete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="刪除商品"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#D32F2F"
+                android:layout_marginTop="8dp" />
 
         </LinearLayout>
     </ScrollView>
