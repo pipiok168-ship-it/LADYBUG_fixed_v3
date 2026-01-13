@@ -1,19 +1,22 @@
 package com.secondhand.vip.api
 
+import com.secondhand.vip.config.ApiConfig
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
 
 object ApiClient {
 
-    private const val BASE_URL =
-        "https://secondhand-backend-v2.zeabur.app/"
+    private val okHttp = OkHttpClient.Builder()
+        .connectTimeout(20, TimeUnit.SECONDS)
+        .readTimeout(20, TimeUnit.SECONDS)
+        .writeTimeout(20, TimeUnit.SECONDS)
+        .build()
 
-    val retrofit: Retrofit by lazy {
-        Retrofit.Builder()
-            .baseUrl(BASE_URL)
-            .client(OkHttpClient())
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-    }
+    val retrofit: Retrofit = Retrofit.Builder()
+        .baseUrl(ApiConfig.BASE_URL)
+        .addConverterFactory(GsonConverterFactory.create())
+        .client(okHttp)
+        .build()
 }

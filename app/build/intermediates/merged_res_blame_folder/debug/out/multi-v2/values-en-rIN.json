@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.secondhand.vip.app-mergeDebugResources-35:/values-en-rIN/values-en-rIN.xml",
+            "outputFile": "com.secondhand.vip.app-mergeDebugResources-30:/values-en-rIN/values-en-rIN.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\CHI\\.gradle\\caches\\transforms-4\\63d2d74fdec2d5ef6ea7708c85f588f7\\transformed\\core-1.12.0\\res\\values-en-rIN\\values-en-rIN.xml",
+                    "source": "C:\\Users\\CHI\\.gradle\\caches\\transforms-4\\385d07963a021cef94803c4e2a51debf\\transformed\\core-1.13.1\\res\\values-en-rIN\\values-en-rIN.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\CHI\\.gradle\\caches\\transforms-4\\e4fd7b9ea34cabec72ce808ef37f99ba\\transformed\\appcompat-1.6.1\\res\\values-en-rIN\\values-en-rIN.xml",
+                    "source": "C:\\Users\\CHI\\.gradle\\caches\\transforms-4\\c2a59ff9d8447e3ff6ed63ca34a81a5e\\transformed\\appcompat-1.7.0\\res\\values-en-rIN\\values-en-rIN.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

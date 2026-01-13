@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="ic_launcher_background">#FFE29A</color>
-    <color name="card_bg">#1A1A1A</color>
+
+    <!-- 波動水藍色系 -->
+    <color name="aqua_bg">#E6F4F7</color>
+    <color name="aqua_bg_dark">#CDECF1</color>
+
+    <!-- App Launcher Icon 專用背景色（波動水藍） -->
+    <color name="ic_launcher_background">#CDECF1</color>
+
+    <color name="aqua_text_primary">#0E4F5C</color>
+    <color name="aqua_text_secondary">#4F7D86</color>
+
+    <color name="aqua_button">#2BB0C8</color>
+    <color name="white">#FFFFFF</color>
+
 </resources>
+

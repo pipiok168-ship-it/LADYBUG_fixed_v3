@@ -1,10 +1,13 @@
 package com.secondhand.vip.api
 
+import com.secondhand.vip.model.AddProductRequest
 import com.secondhand.vip.model.Product
-import okhttp3.MultipartBody
-import okhttp3.RequestBody
 import retrofit2.Call
-import retrofit2.http.*
+import retrofit2.http.Body
+import retrofit2.http.DELETE
+import retrofit2.http.GET
+import retrofit2.http.POST
+import retrofit2.http.Path
 
 interface ApiService {
 
@@ -12,14 +15,10 @@ interface ApiService {
     @GET("/api/products")
     fun getProducts(): Call<List<Product>>
 
-    // 新增商品（含圖片 + 描述）
-    @Multipart
+    // 新增商品（JSON only）
     @POST("/api/products")
     fun addProduct(
-        @Part("name") name: RequestBody,
-        @Part("price") price: RequestBody,
-        @Part("description") description: RequestBody, // ✅ 關鍵在這
-        @Part image: MultipartBody.Part?
+        @Body body: AddProductRequest
     ): Call<Product>
 
     // 刪除商品

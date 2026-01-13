@@ -16,63 +16,55 @@ import retrofit2.Response
 
 class ProductListActivity : AppCompatActivity() {
 
-    private lateinit var recyclerView: RecyclerView
+    private lateinit var recycler: RecyclerView
     private lateinit var adapter: ProductAdapter
-    private val products: MutableList<Product> = mutableListOf()
+    private val items = mutableListOf<Product>()
 
-    private val api: ApiService by lazy {
-        ApiClient.retrofit.create(ApiService::class.java)
-    }
-
-    companion object {
-        const val REQ_DETAIL = 1001
-    }
+    private val api: ApiService = ApiClient.retrofit.create(ApiService::class.java)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_product_list)
 
-        recyclerView = findViewById(R.id.recyclerProducts)
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        recycler = findViewById(R.id.recyclerProducts)
+        recycler.layoutManager = LinearLayoutManager(this)
 
-        adapter = ProductAdapter(products)
-        recyclerView.adapter = adapter
+        adapter = ProductAdapter(items) { product ->
+    val intent = Intent(this, ProductDetailActivity::class.java)
+    intent.putExtra("product", product)
+    startActivity(intent)
+}
 
+recycler.adapter = adapter
+
+        loadProducts()
+    }
+
+    override fun onResume() {
+        super.onResume()
         loadProducts()
     }
 
     private fun loadProducts() {
         api.getProducts().enqueue(object : Callback<List<Product>> {
-            override fun onResponse(
-                call: Call<List<Product>>,
-                response: Response<List<Product>>
-            ) {
+            override fun onResponse(call: Call<List<Product>>, response: Response<List<Product>>) {
                 if (response.isSuccessful) {
                     val list = response.body() ?: emptyList()
-                    adapter.setData(list)
+                    items.clear()
+                    items.addAll(list)
+                    adapter.notifyDataSetChanged()
                 } else {
-                    Toast.makeText(
-                        this@ProductListActivity,
-                        "載入失敗 (${response.code()})",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    toast("讀取失敗：${response.code()}")
                 }
             }
 
             override fun onFailure(call: Call<List<Product>>, t: Throwable) {
-                Toast.makeText(
-                    this@ProductListActivity,
-                    "連線失敗：${t.message}",
-                    Toast.LENGTH_SHORT
-                ).show()
+                toast("連線失敗：${t.message}")
             }
         })
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == REQ_DETAIL && resultCode == RESULT_OK) {
-            loadProducts()
-        }
+    private fun toast(msg: String) {
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
     }
 }

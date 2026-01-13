@@ -38,7 +38,9 @@ class MainActivity : AppCompatActivity() {
         // 新增商品（需先登入）
         btnAddProduct.setOnClickListener {
             if (isSellerLogin) {
-                startActivity(Intent(this, AddProductActivity::class.java))
+                startActivity(
+                    Intent(this, AddItemActivity::class.java)
+                )
             } else {
                 Toast.makeText(this, "請先登入賣家帳號", Toast.LENGTH_SHORT).show()
             }

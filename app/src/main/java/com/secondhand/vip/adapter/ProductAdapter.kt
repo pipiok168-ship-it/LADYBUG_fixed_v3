@@ -1,62 +1,40 @@
 package com.secondhand.vip.adapter
 
-import android.app.Activity
-import android.content.Intent
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.secondhand.vip.ProductDetailActivity
 import com.secondhand.vip.R
 import com.secondhand.vip.model.Product
 
 class ProductAdapter(
-    private val items: MutableList<Product>
-) : RecyclerView.Adapter<ProductViewHolder>() {
+    private val items: List<Product>,
+    private val onItemClick: (Product) -> Unit   // ✅ 點擊回傳
+) : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
+
+    inner class ProductViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val txtName: TextView = view.findViewById(R.id.txtName)
+        val txtPrice: TextView = view.findViewById(R.id.txtPrice)
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
-        val v = LayoutInflater.from(parent.context)
+        val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_product, parent, false)
-        return ProductViewHolder(v)
+        return ProductViewHolder(view)
     }
 
     override fun getItemCount(): Int = items.size
 
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
-        val p = items[position]
+        val product = items[position]
 
-        holder.name.text = p.name ?: ""
-        holder.price.text = "NT$ ${p.price ?: 0}"
+        holder.txtName.text = product.name
+        holder.txtPrice.text = "NT$ ${product.price}"
 
-        val url = p.imageUrl?.takeIf { it.isNotBlank() }
-        if (url != null) {
-            Glide.with(holder.itemView.context)
-                .load(url)
-                .placeholder(R.drawable.placeholder)
-                .into(holder.image)
-        } else {
-            holder.image.setImageResource(R.drawable.placeholder)
-        }
-
+        // ✅ 正確點擊位置
         holder.itemView.setOnClickListener {
-            val ctx = holder.itemView.context
-            val itn = Intent(ctx, ProductDetailActivity::class.java)
-            itn.putExtra("product", p)
-
-            if (ctx is Activity) {
-                ctx.startActivityForResult(itn, com.secondhand.vip.ProductListActivity.REQ_DETAIL)
-            } else {
-                ctx.startActivity(itn)
-            }
+            onItemClick(product)
         }
-    }
-
-    /**
-     * ✅ 關鍵方法：給 ProductListActivity 用
-     */
-    fun setData(newItems: List<Product>) {
-        items.clear()
-        items.addAll(newItems)
-        notifyDataSetChanged()
     }
 }
