@@ -3,8 +3,8 @@ package com.secondhand.vip.model
 import java.io.Serializable
 
 data class Product(
-    val _id: String?,
+    val id: String,
     val name: String,
     val price: Int,
-    val description: String?
+    val description: String
 ) : Serializable

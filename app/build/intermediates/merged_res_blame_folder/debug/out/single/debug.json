@@ -4,24 +4,12 @@
         "source": "com.secondhand.vip.app-main-34:/mipmap-xxxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.secondhand.vip.app-merged_res-32:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "com.secondhand.vip.app-main-34:/mipmap-mdpi/ic_launcher.webp"
-    },
-    {
-        "merged": "com.secondhand.vip.app-merged_res-32:/layout_activity_product_list.xml.flat",
-        "source": "com.secondhand.vip.app-main-34:/layout/activity_product_list.xml"
-    },
-    {
         "merged": "com.secondhand.vip.app-merged_res-32:/mipmap-mdpi_ic_launcher_foreground.webp.flat",
         "source": "com.secondhand.vip.app-main-34:/mipmap-mdpi/ic_launcher_foreground.webp"
     },
     {
         "merged": "com.secondhand.vip.app-merged_res-32:/mipmap-xhdpi_ic_launcher_round.webp.flat",
         "source": "com.secondhand.vip.app-main-34:/mipmap-xhdpi/ic_launcher_round.webp"
-    },
-    {
-        "merged": "com.secondhand.vip.app-merged_res-32:/mipmap-anydpi-v26_ic_secondhand_foreground.png.flat",
-        "source": "com.secondhand.vip.app-main-34:/mipmap-anydpi-v26/ic_secondhand_foreground.png"
     },
     {
         "merged": "com.secondhand.vip.app-merged_res-32:/layout_dialog_line_qr.xml.flat",
@@ -36,52 +24,36 @@
         "source": "com.secondhand.vip.app-main-34:/mipmap-hdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.secondhand.vip.app-merged_res-32:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "com.secondhand.vip.app-main-34:/mipmap-xxhdpi/ic_launcher.webp"
-    },
-    {
-        "merged": "com.secondhand.vip.app-merged_res-32:/drawable_ic_launcher_background.xml.flat",
-        "source": "com.secondhand.vip.app-main-34:/drawable/ic_launcher_background.xml"
-    },
-    {
-        "merged": "com.secondhand.vip.app-merged_res-32:/mipmap-xhdpi_ic_launcher_foreground.webp.flat",
-        "source": "com.secondhand.vip.app-main-34:/mipmap-xhdpi/ic_launcher_foreground.webp"
+        "merged": "com.secondhand.vip.app-merged_res-32:/drawable_bg_champagne_button.xml.flat",
+        "source": "com.secondhand.vip.app-main-34:/drawable/bg_champagne_button.xml"
     },
     {
         "merged": "com.secondhand.vip.app-merged_res-32:/layout_item_product.xml.flat",
         "source": "com.secondhand.vip.app-main-34:/layout/item_product.xml"
     },
     {
-        "merged": "com.secondhand.vip.app-merged_res-32:/layout_bg_dialog_round.xml.flat",
-        "source": "com.secondhand.vip.app-main-34:/layout/bg_dialog_round.xml"
+        "merged": "com.secondhand.vip.app-merged_res-32:/layout_item_question.xml.flat",
+        "source": "com.secondhand.vip.app-main-34:/layout/item_question.xml"
     },
     {
-        "merged": "com.secondhand.vip.app-merged_res-32:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.secondhand.vip.app-main-34:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "com.secondhand.vip.app-merged_res-32:/layout_bg_dialog_round.xml.flat",
+        "source": "com.secondhand.vip.app-main-34:/layout/bg_dialog_round.xml"
     },
     {
         "merged": "com.secondhand.vip.app-merged_res-32:/drawable_img_card.xml.flat",
         "source": "com.secondhand.vip.app-main-34:/drawable/img_card.xml"
     },
     {
-        "merged": "com.secondhand.vip.app-merged_res-32:/layout_activity_login.xml.flat",
-        "source": "com.secondhand.vip.app-main-34:/layout/activity_login.xml"
+        "merged": "com.secondhand.vip.app-merged_res-32:/layout_item_qa.xml.flat",
+        "source": "com.secondhand.vip.app-main-34:/layout/item_qa.xml"
     },
     {
         "merged": "com.secondhand.vip.app-merged_res-32:/mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
         "source": "com.secondhand.vip.app-main-34:/mipmap-xxxhdpi/ic_launcher_foreground.webp"
     },
     {
-        "merged": "com.secondhand.vip.app-merged_res-32:/layout_dialog_contact_seller.xml.flat",
-        "source": "com.secondhand.vip.app-main-34:/layout/dialog_contact_seller.xml"
-    },
-    {
         "merged": "com.secondhand.vip.app-merged_res-32:/drawable_ic_image_error.xml.flat",
         "source": "com.secondhand.vip.app-main-34:/drawable/ic_image_error.xml"
-    },
-    {
-        "merged": "com.secondhand.vip.app-merged_res-32:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.secondhand.vip.app-main-34:/mipmap-xxhdpi/ic_launcher_round.webp"
     },
     {
         "merged": "com.secondhand.vip.app-merged_res-32:/drawable_product_image_bg.xml.flat",
@@ -96,6 +68,86 @@
         "source": "com.secondhand.vip.app-main-34:/drawable/line_qrcode.jpg"
     },
     {
+        "merged": "com.secondhand.vip.app-merged_res-32:/layout_activity_product_detail.xml.flat",
+        "source": "com.secondhand.vip.app-main-34:/layout/activity_product_detail.xml"
+    },
+    {
+        "merged": "com.secondhand.vip.app-merged_res-32:/layout_activity_splash.xml.flat",
+        "source": "com.secondhand.vip.app-main-34:/layout/activity_splash.xml"
+    },
+    {
+        "merged": "com.secondhand.vip.app-merged_res-32:/drawable_bg_qna_item.xml.flat",
+        "source": "com.secondhand.vip.app-main-34:/drawable/bg_qna_item.xml"
+    },
+    {
+        "merged": "com.secondhand.vip.app-merged_res-32:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.secondhand.vip.app-main-34:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.secondhand.vip.app-merged_res-32:/drawable_bg_qna_glow.xml.flat",
+        "source": "com.secondhand.vip.app-main-34:/drawable/bg_qna_glow.xml"
+    },
+    {
+        "merged": "com.secondhand.vip.app-merged_res-32:/layout_dialog_add_question.xml.flat",
+        "source": "com.secondhand.vip.app-main-34:/layout/dialog_add_question.xml"
+    },
+    {
+        "merged": "com.secondhand.vip.app-merged_res-32:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.secondhand.vip.app-main-34:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.secondhand.vip.app-merged_res-32:/layout_activity_product_list.xml.flat",
+        "source": "com.secondhand.vip.app-main-34:/layout/activity_product_list.xml"
+    },
+    {
+        "merged": "com.secondhand.vip.app-merged_res-32:/mipmap-anydpi-v26_ic_secondhand_foreground.png.flat",
+        "source": "com.secondhand.vip.app-main-34:/mipmap-anydpi-v26/ic_secondhand_foreground.png"
+    },
+    {
+        "merged": "com.secondhand.vip.app-merged_res-32:/layout_dialog_qna.xml.flat",
+        "source": "com.secondhand.vip.app-main-34:/layout/dialog_qna.xml"
+    },
+    {
+        "merged": "com.secondhand.vip.app-merged_res-32:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.secondhand.vip.app-main-34:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.secondhand.vip.app-merged_res-32:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.secondhand.vip.app-main-34:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.secondhand.vip.app-merged_res-32:/mipmap-xhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.secondhand.vip.app-main-34:/mipmap-xhdpi/ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "com.secondhand.vip.app-merged_res-32:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.secondhand.vip.app-main-34:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.secondhand.vip.app-merged_res-32:/layout_item_product_simple.xml.flat",
+        "source": "com.secondhand.vip.app-main-34:/layout/item_product_simple.xml"
+    },
+    {
+        "merged": "com.secondhand.vip.app-merged_res-32:/layout_activity_login.xml.flat",
+        "source": "com.secondhand.vip.app-main-34:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.secondhand.vip.app-merged_res-32:/drawable_bg_btn_delete_soft_red.xml.flat",
+        "source": "com.secondhand.vip.app-main-34:/drawable/bg_btn_delete_soft_red.xml"
+    },
+    {
+        "merged": "com.secondhand.vip.app-merged_res-32:/layout_dialog_contact_seller.xml.flat",
+        "source": "com.secondhand.vip.app-main-34:/layout/dialog_contact_seller.xml"
+    },
+    {
+        "merged": "com.secondhand.vip.app-merged_res-32:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.secondhand.vip.app-main-34:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.secondhand.vip.app-merged_res-32:/layout_dialog_line.xml.flat",
+        "source": "com.secondhand.vip.app-main-34:/layout/dialog_line.xml"
+    },
+    {
         "merged": "com.secondhand.vip.app-merged_res-32:/layout_activity_main.xml.flat",
         "source": "com.secondhand.vip.app-main-34:/layout/activity_main.xml"
     },
@@ -108,16 +160,12 @@
         "source": "com.secondhand.vip.app-main-34:/drawable/ic_image_placeholder.xml"
     },
     {
-        "merged": "com.secondhand.vip.app-merged_res-32:/layout_activity_product_detail.xml.flat",
-        "source": "com.secondhand.vip.app-main-34:/layout/activity_product_detail.xml"
-    },
-    {
         "merged": "com.secondhand.vip.app-merged_res-32:/xml_network_security_config.xml.flat",
         "source": "com.secondhand.vip.app-main-34:/xml/network_security_config.xml"
     },
     {
-        "merged": "com.secondhand.vip.app-merged_res-32:/layout_activity_splash.xml.flat",
-        "source": "com.secondhand.vip.app-main-34:/layout/activity_splash.xml"
+        "merged": "com.secondhand.vip.app-merged_res-32:/drawable_bg_dialog_card.xml.flat",
+        "source": "com.secondhand.vip.app-main-34:/drawable/bg_dialog_card.xml"
     },
     {
         "merged": "com.secondhand.vip.app-merged_res-32:/layout_activity_add_product.xml.flat",
@@ -136,8 +184,8 @@
         "source": "com.secondhand.vip.app-main-34:/mipmap-xxxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.secondhand.vip.app-merged_res-32:/layout_activity_add_item.xml.flat",
-        "source": "com.secondhand.vip.app-main-34:/layout/activity_add_item.xml"
+        "merged": "com.secondhand.vip.app-merged_res-32:/drawable_bg_champagne_card.xml.flat",
+        "source": "com.secondhand.vip.app-main-34:/drawable/bg_champagne_card.xml"
     },
     {
         "merged": "com.secondhand.vip.app-merged_res-32:/drawable_placeholder.png.flat",
@@ -146,10 +194,6 @@
     {
         "merged": "com.secondhand.vip.app-merged_res-32:/mipmap-xhdpi_ic_launcher.webp.flat",
         "source": "com.secondhand.vip.app-main-34:/mipmap-xhdpi/ic_launcher.webp"
-    },
-    {
-        "merged": "com.secondhand.vip.app-merged_res-32:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "com.secondhand.vip.app-main-34:/mipmap-mdpi/ic_launcher_round.webp"
     },
     {
         "merged": "com.secondhand.vip.app-merged_res-32:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",

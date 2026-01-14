@@ -1,89 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000"
-    android:padding="16dp">
+    android:background="#000000">
 
-    <LinearLayout
+    <!-- ===== 可滑動主內容 ===== -->
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:paddingBottom="96dp">
 
-        <!-- 商品名稱 -->
-        <TextView
-            android:id="@+id/txtName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="商品名稱"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="#FFFFFF" />
-
-        <!-- 價格 -->
-        <TextView
-            android:id="@+id/txtPrice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="NT$ 0"
-            android:textSize="18sp"
-            android:textColor="#FFD700"
-            android:layout_marginTop="8dp" />
-
-        <!-- 分隔線 -->
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#333333"
-            android:layout_marginVertical="12dp" />
-
-        <!-- 商品詳情標題 -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="商品詳情"
-            android:textSize="16sp"
-            android:textColor="#FFD700" />
-
-        <!-- 商品描述 -->
-        <TextView
-            android:id="@+id/txtDesc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="商品描述內容"
-            android:textSize="15sp"
-            android:textColor="#FFFFFF"
-            android:layout_marginTop="6dp" />
-
-        <!-- 按鈕區 -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="20dp"
-            android:gravity="center">
+            android:orientation="vertical"
+            android:padding="16dp">
 
-            <!-- 聯絡賣家 -->
-            <Button
-                android:id="@+id/btnContactSeller"
-                android:layout_width="0dp"
+            <!-- 商品名稱 -->
+            <TextView
+                android:id="@+id/txtName"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="聯絡賣家"
-                android:textColor="#000000"
-                android:backgroundTint="#FFD700" />
+                android:text="商品名稱"
+                android:textSize="22sp"
+                android:textColor="#C9A24D"
+                android:layout_marginBottom="6dp" />
 
-            <!-- 刪除商品 -->
-            <Button
-                android:id="@+id/btnDelete"
-                android:layout_width="0dp"
+            <!-- 價格 -->
+            <TextView
+                android:id="@+id/txtPrice"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="刪除商品"
+                android:text="NT$ 0"
+                android:textSize="18sp"
+                android:textColor="#C9A24D"
+                android:layout_marginBottom="16dp" />
+
+            <!-- 商品描述 -->
+            <TextView
+                android:id="@+id/txtDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="商品描述內容"
+                android:textSize="15sp"
                 android:textColor="#FFFFFF"
-                android:backgroundTint="#B00020"
-                android:layout_marginStart="12dp" />
+                android:layout_marginBottom="24dp" />
+
+            <!-- ===== 問與答（整塊可點）===== -->
+            <LinearLayout
+                android:id="@+id/layoutQna"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_marginTop="12dp"
+                android:background="#111111"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:id="@+id/txtQnaTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="問與答"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#E6C77A"
+                    android:shadowColor="#66000000"
+                    android:shadowDx="0"
+                    android:shadowDy="2"
+                    android:shadowRadius="4" />
+
+            </LinearLayout>
+
         </LinearLayout>
+    </ScrollView>
+
+    <!-- ===== 底部固定按鈕（加高版）===== -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:background="#000000">
+
+        <Button
+            android:id="@+id/btnContact"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="聯絡賣家"
+            android:textSize="13sp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#6B5B95"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/btnDelete"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="刪除商品"
+            android:textSize="13sp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#B23A48" />
 
     </LinearLayout>
-</ScrollView>
+
+</FrameLayout>

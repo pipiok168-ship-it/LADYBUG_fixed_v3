@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.secondhand.vip">
 
+    <!-- 權限 -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
@@ -12,11 +13,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        android:theme="@style/Theme.Material3.DayNight.NoActionBar">
 
-        <!-- Splash -->
+        <!-- 啟動頁 -->
         <activity
-            android:name=".SplashActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,23 +25,28 @@
             </intent-filter>
         </activity>
 
-        <!-- Main -->
-        <activity android:name=".MainActivity" />
+        <!-- 登入 -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
 
-        <!-- Login -->
-        <activity android:name=".LoginActivity" />
+        <!-- 商品列表 -->
+        <activity
+            android:name=".ProductListActivity"
+            android:exported="false" />
 
-        <!-- Seller Login -->
-        <activity android:name=".SellerLoginActivity" />
+        <!-- 商品詳情 -->
+        <activity
+            android:name=".ProductDetailActivity"
+            android:exported="false" />
 
-        <!-- Product List -->
-        <activity android:name=".ProductListActivity" />
+        <!-- 新增商品（多圖） -->
+        <activity
+            android:name=".AddProductActivity"
+            android:exported="false" />
 
-        <!-- Product Detail -->
-        <activity android:name=".ProductDetailActivity" />
-
-        <!-- Add Product -->
-        <activity android:name=".AddItemActivity" />
+        <!-- ❌ 舊頁面，不要存在 -->
+        <!-- <activity android:name=".AddItemActivity" /> -->
 
     </application>
 

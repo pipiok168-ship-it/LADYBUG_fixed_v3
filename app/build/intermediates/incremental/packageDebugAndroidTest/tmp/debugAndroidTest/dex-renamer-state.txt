@@ -1,4 +1,0 @@
-#Tue Jan 13 19:38:55 CST 2026
-base.0=D\:\\LADYBUG_fixed_v3\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\0\\classes.dex
-path.0=0/classes.dex
-renamed.0=classes.dex

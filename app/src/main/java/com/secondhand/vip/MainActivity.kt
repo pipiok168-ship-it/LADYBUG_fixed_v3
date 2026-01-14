@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // ✅ 正確的 findViewById（沒有任何奇怪字）
         btnBrowse = findViewById(R.id.btnBrowse)
         btnSellerLogin = findViewById(R.id.btnSellerLogin)
         btnAddProduct = findViewById(R.id.btnAddProduct)
@@ -35,11 +36,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, LoginActivity::class.java))
         }
 
-        // 新增商品（需先登入）
+        // 新增商品（已統一）
         btnAddProduct.setOnClickListener {
             if (isSellerLogin) {
                 startActivity(
-                    Intent(this, AddItemActivity::class.java)
+                    Intent(this, AddProductActivity::class.java)
                 )
             } else {
                 Toast.makeText(this, "請先登入賣家帳號", Toast.LENGTH_SHORT).show()
@@ -60,7 +61,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun refreshSellerUI() {
-
         isSellerLogin = SellerSession.isLoggedIn(this)
 
         btnAddProduct.isEnabled = isSellerLogin

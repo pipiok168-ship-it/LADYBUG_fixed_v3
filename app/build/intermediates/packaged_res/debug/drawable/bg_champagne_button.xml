@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 外框陰影 / 暗邊 -->
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="22dp" />
+            <solid android:color="#A9863C" />
+        </shape>
+    </item>
+
+    <!-- 主體香檳金 -->
+    <item android:top="1dp" android:left="1dp" android:right="1dp" android:bottom="2dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="22dp" />
+            <solid android:color="#E6C98A" />
+        </shape>
+    </item>
+
+    <!-- 內陰影（下緣更暗，做「凹」的假立體） -->
+    <item android:top="2dp" android:left="2dp" android:right="2dp" android:bottom="2dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="20dp" />
+            <gradient
+                android:angle="90"
+                android:startColor="#00000000"
+                android:centerColor="#00000000"
+                android:endColor="#33000000" />
+        </shape>
+    </item>
+
+    <!-- 高光（上緣薄亮） -->
+    <item android:top="2dp" android:left="3dp" android:right="3dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="18dp" />
+            <solid android:color="#33FFFFFF" />
+        </shape>
+    </item>
+
+</layer-list>
