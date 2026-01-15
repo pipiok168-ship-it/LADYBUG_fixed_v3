@@ -1,6 +1,7 @@
 package com.secondhand.vip
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.secondhand.vip.adapter.ProductAdapter
@@ -24,7 +25,14 @@ class ProductListActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.recyclerProducts.layoutManager = LinearLayoutManager(this)
-        binding.recyclerProducts.adapter = ProductAdapter(products)
+        binding.recyclerProducts.adapter = ProductAdapter(products) { product ->
+            // ✅ 目前只做這件事
+            Toast.makeText(
+                this,
+                "${product.name} / NT$ ${product.price}",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
 
         loadProducts()
     }
@@ -44,7 +52,7 @@ class ProductListActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<List<Product>>, t: Throwable) {
-                // ❌ 先不要 Toast，不要干擾
+                // 先不處理
             }
         })
     }

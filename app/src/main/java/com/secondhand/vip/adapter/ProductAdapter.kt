@@ -7,7 +7,8 @@ import com.secondhand.vip.R
 import com.secondhand.vip.model.Product
 
 class ProductAdapter(
-    private val items: List<Product>
+    private val items: List<Product>,
+    private val onClick: (Product) -> Unit
 ) : RecyclerView.Adapter<ProductViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
@@ -22,5 +23,9 @@ class ProductAdapter(
         val product = items[position]
         holder.name.text = product.name ?: ""
         holder.price.text = "NT$ ${product.price ?: 0}"
+
+        holder.itemView.setOnClickListener {
+            onClick(product)
+        }
     }
 }
