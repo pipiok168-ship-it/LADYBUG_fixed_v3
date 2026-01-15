@@ -3,32 +3,32 @@
 3    package="com.secondhand.vip.test" >
 4
 5    <uses-sdk
-5-->D:\LADYBUG_fixed_v3\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest6256024988784128166.xml:5:5-74
+5-->D:\LADYBUG_fixed_v3\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest12134511207495260148.xml:5:5-74
 6        android:minSdkVersion="24"
-6-->D:\LADYBUG_fixed_v3\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest6256024988784128166.xml:5:15-41
+6-->D:\LADYBUG_fixed_v3\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest12134511207495260148.xml:5:15-41
 7        android:targetSdkVersion="36" />
-7-->D:\LADYBUG_fixed_v3\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest6256024988784128166.xml:5:42-71
+7-->D:\LADYBUG_fixed_v3\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest12134511207495260148.xml:5:42-71
 8
 9    <instrumentation
-9-->D:\LADYBUG_fixed_v3\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest6256024988784128166.xml:11:5-15:68
+9-->D:\LADYBUG_fixed_v3\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest12134511207495260148.xml:11:5-15:68
 10        android:name="android.test.InstrumentationTestRunner"
-10-->D:\LADYBUG_fixed_v3\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest6256024988784128166.xml:11:22-75
+10-->D:\LADYBUG_fixed_v3\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest12134511207495260148.xml:11:22-75
 11        android:functionalTest="false"
-11-->D:\LADYBUG_fixed_v3\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest6256024988784128166.xml:14:22-52
+11-->D:\LADYBUG_fixed_v3\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest12134511207495260148.xml:14:22-52
 12        android:handleProfiling="false"
-12-->D:\LADYBUG_fixed_v3\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest6256024988784128166.xml:13:22-53
+12-->D:\LADYBUG_fixed_v3\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest12134511207495260148.xml:13:22-53
 13        android:label="Tests for com.secondhand.vip"
-13-->D:\LADYBUG_fixed_v3\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest6256024988784128166.xml:15:22-66
+13-->D:\LADYBUG_fixed_v3\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest12134511207495260148.xml:15:22-66
 14        android:targetPackage="com.secondhand.vip" />
-14-->D:\LADYBUG_fixed_v3\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest6256024988784128166.xml:12:22-64
+14-->D:\LADYBUG_fixed_v3\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest12134511207495260148.xml:12:22-64
 15
 16    <application
-16-->D:\LADYBUG_fixed_v3\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest6256024988784128166.xml:7:5-9:19
+16-->D:\LADYBUG_fixed_v3\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest12134511207495260148.xml:7:5-9:19
 17        android:debuggable="true"
 18        android:extractNativeLibs="false" >
 19        <uses-library android:name="android.test.runner" />
-19-->D:\LADYBUG_fixed_v3\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest6256024988784128166.xml:8:9-60
-19-->D:\LADYBUG_fixed_v3\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest6256024988784128166.xml:8:23-57
+19-->D:\LADYBUG_fixed_v3\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest12134511207495260148.xml:8:9-60
+19-->D:\LADYBUG_fixed_v3\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest12134511207495260148.xml:8:23-57
 20    </application>
 21
 22</manifest>

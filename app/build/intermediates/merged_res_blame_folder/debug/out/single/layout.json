@@ -1,78 +1,74 @@
 [
     {
-        "merged": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-mergeDebugResources-31:\\layout\\activity_main.xml",
-        "source": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-main-34:\\layout\\activity_main.xml"
+        "merged": "com.secondhand.vip.app-mergeDebugResources-32:/layout/sheet_add_success.xml",
+        "source": "com.secondhand.vip.app-main-35:/layout/sheet_add_success.xml"
     },
     {
-        "merged": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-mergeDebugResources-31:\\layout\\activity_product_list.xml",
-        "source": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-main-34:\\layout\\activity_product_list.xml"
+        "merged": "com.secondhand.vip.app-mergeDebugResources-32:/layout/activity_main.xml",
+        "source": "com.secondhand.vip.app-main-35:/layout/activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-mergeDebugResources-31:\\layout\\dialog_line_qr.xml",
-        "source": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-main-34:\\layout\\dialog_line_qr.xml"
+        "merged": "com.secondhand.vip.app-mergeDebugResources-32:/layout/activity_add_product.xml",
+        "source": "com.secondhand.vip.app-main-35:/layout/activity_add_product.xml"
     },
     {
-        "merged": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-mergeDebugResources-31:\\layout\\item_question.xml",
-        "source": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-main-34:\\layout\\item_question.xml"
+        "merged": "com.secondhand.vip.app-mergeDebugResources-32:/layout/activity_splash.xml",
+        "source": "com.secondhand.vip.app-main-35:/layout/activity_splash.xml"
     },
     {
-        "merged": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-mergeDebugResources-31:\\layout\\activity_add_product.xml",
-        "source": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-main-34:\\layout\\activity_add_product.xml"
+        "merged": "com.secondhand.vip.app-mergeDebugResources-32:/layout/dialog_line.xml",
+        "source": "com.secondhand.vip.app-main-35:/layout/dialog_line.xml"
     },
     {
-        "merged": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-mergeDebugResources-31:\\layout\\item_product.xml",
-        "source": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-main-34:\\layout\\item_product.xml"
+        "merged": "com.secondhand.vip.app-mergeDebugResources-32:/layout/item_product.xml",
+        "source": "com.secondhand.vip.app-main-35:/layout/item_product.xml"
     },
     {
-        "merged": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-mergeDebugResources-31:\\layout\\activity_login.xml",
-        "source": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-main-34:\\layout\\activity_login.xml"
+        "merged": "com.secondhand.vip.app-mergeDebugResources-32:/layout/activity_product_list.xml",
+        "source": "com.secondhand.vip.app-main-35:/layout/activity_product_list.xml"
     },
     {
-        "merged": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-mergeDebugResources-31:\\layout\\item_product_simple.xml",
-        "source": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-main-34:\\layout\\item_product_simple.xml"
+        "merged": "com.secondhand.vip.app-mergeDebugResources-32:/layout/dialog_add_question.xml",
+        "source": "com.secondhand.vip.app-main-35:/layout/dialog_add_question.xml"
     },
     {
-        "merged": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-mergeDebugResources-31:\\layout\\sheet_contact_seller.xml",
-        "source": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-main-34:\\layout\\sheet_contact_seller.xml"
+        "merged": "com.secondhand.vip.app-mergeDebugResources-32:/layout/dialog_contact_seller.xml",
+        "source": "com.secondhand.vip.app-main-35:/layout/dialog_contact_seller.xml"
     },
     {
-        "merged": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-mergeDebugResources-31:\\layout\\bottomsheet_add_success.xml",
-        "source": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-main-34:\\layout\\bottomsheet_add_success.xml"
+        "merged": "com.secondhand.vip.app-mergeDebugResources-32:/layout/sheet_contact_seller.xml",
+        "source": "com.secondhand.vip.app-main-35:/layout/sheet_contact_seller.xml"
     },
     {
-        "merged": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-mergeDebugResources-31:\\layout\\item_qa.xml",
-        "source": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-main-34:\\layout\\item_qa.xml"
+        "merged": "com.secondhand.vip.app-mergeDebugResources-32:/layout/item_qa.xml",
+        "source": "com.secondhand.vip.app-main-35:/layout/item_qa.xml"
     },
     {
-        "merged": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-mergeDebugResources-31:\\layout\\activity_product_detail.xml",
-        "source": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-main-34:\\layout\\activity_product_detail.xml"
+        "merged": "com.secondhand.vip.app-mergeDebugResources-32:/layout/activity_product_detail.xml",
+        "source": "com.secondhand.vip.app-main-35:/layout/activity_product_detail.xml"
     },
     {
-        "merged": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-mergeDebugResources-31:\\layout\\dialog_add_question.xml",
-        "source": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-main-34:\\layout\\dialog_add_question.xml"
+        "merged": "com.secondhand.vip.app-mergeDebugResources-32:/layout/bottomsheet_add_success.xml",
+        "source": "com.secondhand.vip.app-main-35:/layout/bottomsheet_add_success.xml"
     },
     {
-        "merged": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-mergeDebugResources-31:\\layout\\dialog_contact_seller.xml",
-        "source": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-main-34:\\layout\\dialog_contact_seller.xml"
+        "merged": "com.secondhand.vip.app-mergeDebugResources-32:/layout/dialog_line_qr.xml",
+        "source": "com.secondhand.vip.app-main-35:/layout/dialog_line_qr.xml"
     },
     {
-        "merged": "com.secondhand.vip.app-mergeDebugResources-31:/layout/item_product.xml",
-        "source": "com.secondhand.vip.app-main-34:/layout/item_product.xml"
+        "merged": "com.secondhand.vip.app-mergeDebugResources-32:/layout/dialog_qna.xml",
+        "source": "com.secondhand.vip.app-main-35:/layout/dialog_qna.xml"
     },
     {
-        "merged": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-mergeDebugResources-31:\\layout\\activity_splash.xml",
-        "source": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-main-34:\\layout\\activity_splash.xml"
+        "merged": "com.secondhand.vip.app-mergeDebugResources-32:/layout/item_product_simple.xml",
+        "source": "com.secondhand.vip.app-main-35:/layout/item_product_simple.xml"
     },
     {
-        "merged": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-mergeDebugResources-31:\\layout\\dialog_line.xml",
-        "source": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-main-34:\\layout\\dialog_line.xml"
+        "merged": "com.secondhand.vip.app-mergeDebugResources-32:/layout/activity_login.xml",
+        "source": "com.secondhand.vip.app-main-35:/layout/activity_login.xml"
     },
     {
-        "merged": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-mergeDebugResources-31:\\layout\\sheet_add_success.xml",
-        "source": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-main-34:\\layout\\sheet_add_success.xml"
-    },
-    {
-        "merged": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-mergeDebugResources-31:\\layout\\dialog_qna.xml",
-        "source": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-main-34:\\layout\\dialog_qna.xml"
+        "merged": "com.secondhand.vip.app-mergeDebugResources-32:/layout/item_question.xml",
+        "source": "com.secondhand.vip.app-main-35:/layout/item_question.xml"
     }
 ]

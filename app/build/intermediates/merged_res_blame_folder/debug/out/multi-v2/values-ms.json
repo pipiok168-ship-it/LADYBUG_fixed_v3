@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.secondhand.vip.app-mergeDebugResources-30:/values-ms/values-ms.xml",
+            "outputFile": "com.secondhand.vip.app-mergeDebugResources-31:/values-ms/values-ms.xml",
             "map": [
                 {
                     "source": "C:\\Users\\CHI\\.gradle\\caches\\transforms-4\\385d07963a021cef94803c4e2a51debf\\transformed\\core-1.13.1\\res\\values-ms\\values-ms.xml",

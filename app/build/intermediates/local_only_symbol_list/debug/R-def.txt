@@ -20,6 +20,7 @@ drawable ic_heart_champagne
 drawable ic_image_error
 drawable ic_image_placeholder
 drawable ic_launcher_background
+drawable ic_trash_yellow
 drawable img_card
 drawable line_qrcode
 drawable placeholder
