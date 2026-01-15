@@ -4,6 +4,7 @@ package com.secondhand.vip.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,14 +21,18 @@ public final class ItemProductBinding implements ViewBinding {
   private final CardView rootView;
 
   @NonNull
+  public final ImageView imgThumb;
+
+  @NonNull
   public final TextView txtName;
 
   @NonNull
   public final TextView txtPrice;
 
-  private ItemProductBinding(@NonNull CardView rootView, @NonNull TextView txtName,
-      @NonNull TextView txtPrice) {
+  private ItemProductBinding(@NonNull CardView rootView, @NonNull ImageView imgThumb,
+      @NonNull TextView txtName, @NonNull TextView txtPrice) {
     this.rootView = rootView;
+    this.imgThumb = imgThumb;
     this.txtName = txtName;
     this.txtPrice = txtPrice;
   }
@@ -59,6 +64,12 @@ public final class ItemProductBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.imgThumb;
+      ImageView imgThumb = ViewBindings.findChildViewById(rootView, id);
+      if (imgThumb == null) {
+        break missingId;
+      }
+
       id = R.id.txtName;
       TextView txtName = ViewBindings.findChildViewById(rootView, id);
       if (txtName == null) {
@@ -71,7 +82,7 @@ public final class ItemProductBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ItemProductBinding((CardView) rootView, txtName, txtPrice);
+      return new ItemProductBinding((CardView) rootView, imgThumb, txtName, txtPrice);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

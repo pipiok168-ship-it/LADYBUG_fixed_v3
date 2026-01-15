@@ -8,10 +8,6 @@
         "source": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-main-34:\\layout\\item_product_simple.xml"
     },
     {
-        "merged": "com.secondhand.vip.app-merged_res-32:/drawable_bg_product_card.xml.flat",
-        "source": "com.secondhand.vip.app-main-34:/drawable/bg_product_card.xml"
-    },
-    {
         "merged": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-merged_res-32:\\drawable_bg_champagne_card.xml.flat",
         "source": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-main-34:\\drawable\\bg_champagne_card.xml"
     },
@@ -30,6 +26,10 @@
     {
         "merged": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-merged_res-32:\\drawable_ic_image_placeholder.xml.flat",
         "source": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-main-34:\\drawable\\ic_image_placeholder.xml"
+    },
+    {
+        "merged": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-merged_res-32:\\drawable_bg_product_card.xml.flat",
+        "source": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-main-34:\\drawable\\bg_product_card.xml"
     },
     {
         "merged": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-merged_res-32:\\drawable_splash_logo.png.flat",
@@ -56,12 +56,12 @@
         "source": "com.secondhand.vip.app-main-34:/layout/item_product.xml"
     },
     {
-        "merged": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-merged_res-32:\\drawable_placeholder.png.flat",
-        "source": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-main-34:\\drawable\\placeholder.png"
-    },
-    {
         "merged": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-merged_res-32:\\mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
         "source": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-main-34:\\mipmap-xxxhdpi\\ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-merged_res-32:\\drawable_placeholder.png.flat",
+        "source": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-main-34:\\drawable\\placeholder.png"
     },
     {
         "merged": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-merged_res-32:\\drawable_product_image_bg.xml.flat",
@@ -138,6 +138,10 @@
     {
         "merged": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-merged_res-32:\\layout_dialog_line_qr.xml.flat",
         "source": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-main-34:\\layout\\dialog_line_qr.xml"
+    },
+    {
+        "merged": "com.secondhand.vip.app-merged_res-32:/drawable_bg_image_placeholder.xml.flat",
+        "source": "com.secondhand.vip.app-main-34:/drawable/bg_image_placeholder.xml"
     },
     {
         "merged": "C:\\Users\\CHI\\.gradle\\daemon\\8.7\\com.secondhand.vip.app-merged_res-32:\\layout_activity_main.xml.flat",
