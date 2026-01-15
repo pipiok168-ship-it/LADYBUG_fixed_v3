@@ -6,23 +6,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
-import androidx.viewbinding.ViewBindings;
 import com.secondhand.vip.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
-import java.lang.String;
 
 public final class ActivityProductListBinding implements ViewBinding {
   @NonNull
-  private final ConstraintLayout rootView;
+  private final RecyclerView rootView;
 
   @NonNull
   public final RecyclerView recyclerProducts;
 
-  private ActivityProductListBinding(@NonNull ConstraintLayout rootView,
+  private ActivityProductListBinding(@NonNull RecyclerView rootView,
       @NonNull RecyclerView recyclerProducts) {
     this.rootView = rootView;
     this.recyclerProducts = recyclerProducts;
@@ -30,7 +27,7 @@ public final class ActivityProductListBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public ConstraintLayout getRoot() {
+  public RecyclerView getRoot() {
     return rootView;
   }
 
@@ -51,19 +48,12 @@ public final class ActivityProductListBinding implements ViewBinding {
 
   @NonNull
   public static ActivityProductListBinding bind(@NonNull View rootView) {
-    // The body of this method is generated in a way you would not otherwise write.
-    // This is done to optimize the compiled bytecode for size and performance.
-    int id;
-    missingId: {
-      id = R.id.recyclerProducts;
-      RecyclerView recyclerProducts = ViewBindings.findChildViewById(rootView, id);
-      if (recyclerProducts == null) {
-        break missingId;
-      }
-
-      return new ActivityProductListBinding((ConstraintLayout) rootView, recyclerProducts);
+    if (rootView == null) {
+      throw new NullPointerException("rootView");
     }
-    String missingId = rootView.getResources().getResourceName(id);
-    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
+
+    RecyclerView recyclerProducts = (RecyclerView) rootView;
+
+    return new ActivityProductListBinding((RecyclerView) rootView, recyclerProducts);
   }
 }

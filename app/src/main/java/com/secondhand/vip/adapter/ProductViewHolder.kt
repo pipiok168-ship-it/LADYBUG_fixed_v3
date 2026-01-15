@@ -6,8 +6,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.secondhand.vip.R
 
 class ProductViewHolder(v: View) : RecyclerView.ViewHolder(v) {
-
     val name: TextView = v.findViewById(R.id.txtName)
     val price: TextView = v.findViewById(R.id.txtPrice)
-
 }
