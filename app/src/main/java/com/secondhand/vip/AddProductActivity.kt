@@ -1,16 +1,12 @@
 package com.secondhand.vip
 
-import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.secondhand.vip.api.ApiClient
 import com.secondhand.vip.api.ApiService
 import com.secondhand.vip.model.Product
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
-import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.Callback
@@ -54,50 +50,39 @@ class AddProductActivity : AppCompatActivity() {
         val priceBody = RequestBody.create("text/plain".toMediaTypeOrNull(), price)
         val descBody = RequestBody.create("text/plain".toMediaTypeOrNull(), desc)
 
-        api.addProduct(nameBody, priceBody, descBody, emptyList()).enqueue(
-            object : Callback<Product> {
-                override fun onResponse(call: Call<Product>, response: Response<Product>) {
-                    if (response.isSuccessful && response.body() != null) {
-                        showSuccessBottomSheet(response.body()!!)
+        api.addProduct(nameBody, priceBody, descBody, emptyList())
+            .enqueue(object : Callback<Product> {
+
+                override fun onResponse(
+                    call: Call<Product>,
+                    response: Response<Product>
+                ) {
+                    if (response.isSuccessful) {
+                        Toast.makeText(
+                            this@AddProductActivity,
+                            "商品新增成功",
+                            Toast.LENGTH_SHORT
+                        ).show()
+
+                        // ✅ 回商品列表（不顯示任何滑上頁）
+                        setResult(RESULT_OK)
+                        finish()
                     } else {
-                        Toast.makeText(this@AddProductActivity, "新增失敗", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(
+                            this@AddProductActivity,
+                            "新增失敗",
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }
                 }
 
                 override fun onFailure(call: Call<Product>, t: Throwable) {
-                    Toast.makeText(this@AddProductActivity, "連線失敗", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        this@AddProductActivity,
+                        "連線失敗",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
-            }
-        )
-    }
-
-    // ✅ 成功 BottomSheet（關鍵）
-    private fun showSuccessBottomSheet(product: Product) {
-        val dialog = BottomSheetDialog(this)
-        val view = LayoutInflater.from(this)
-            .inflate(R.layout.sheet_add_success, null)
-
-        view.findViewById<TextView>(R.id.txtName).text = product.name
-        view.findViewById<TextView>(R.id.txtPrice).text = "NT$ ${product.price}"
-        view.findViewById<TextView>(R.id.txtDesc).text = product.description
-
-        // 👉 查看商品
-        view.findViewById<Button>(R.id.btnView).setOnClickListener {
-            val intent = Intent(this, ProductDetailActivity::class.java)
-            intent.putExtra("product_id", product._id)
-            startActivity(intent)
-            dialog.dismiss()
-            finish()
-        }
-
-        // 👉 回列表
-        view.findViewById<Button>(R.id.btnList).setOnClickListener {
-            setResult(RESULT_OK)
-            dialog.dismiss()
-            finish()
-        }
-
-        dialog.setContentView(view)
-        dialog.show()
+            })
     }
 }
