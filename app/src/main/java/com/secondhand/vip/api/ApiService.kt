@@ -8,15 +8,17 @@ import retrofit2.http.*
 
 interface ApiService {
 
-    // =============================
-    // 取得商品列表
-    // =============================
+    // ===== 商品列表 =====
     @GET("/api/products")
     fun getProducts(): Call<List<Product>>
 
-    // =============================
-    // 新增商品（多圖）
-    // =============================
+    // ===== 取得單一商品（商品詳情用）=====
+    @GET("/api/products/{id}")
+    fun getProductById(
+        @Path("id") id: String    // 一律傳 MongoDB _id
+    ): Call<Product>
+
+    // ===== 新增商品（多圖）=====
     @Multipart
     @POST("/api/products")
     fun addProduct(
@@ -26,11 +28,9 @@ interface ApiService {
         @Part images: List<MultipartBody.Part>
     ): Call<Product>
 
-    // =============================
-    // 刪除商品
-    // =============================
+    // ===== 刪除商品 =====
     @DELETE("/api/products/{id}")
     fun deleteProduct(
-        @Path("id") id: String
+        @Path("id") id: String    // 一律傳 MongoDB _id
     ): Call<Void>
 }

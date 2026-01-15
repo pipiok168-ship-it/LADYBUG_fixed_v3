@@ -1,0 +1,4 @@
+com.secondhand.vip.test.app-androidTest-0 D:\LADYBUG_fixed_v3\app\build\generated\res\resValues\androidTest\debug
+com.secondhand.vip.test.app-mergeDebugAndroidTestResources-1 D:\LADYBUG_fixed_v3\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.secondhand.vip.test.app-mergeDebugAndroidTestResources-2 D:\LADYBUG_fixed_v3\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.secondhand.vip.test.app-merged_res-3 D:\LADYBUG_fixed_v3\app\build\intermediates\merged_res\debugAndroidTest

@@ -1,59 +1,39 @@
-package com.secondhand.vip.ui
+package com.secondhand.vip
 
-import android.content.ActivityNotFoundException
-import android.content.Context
+import android.app.Dialog
 import android.content.Intent
-import android.graphics.Color
 import android.net.Uri
+import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.TextView
-import androidx.appcompat.app.AlertDialog
-import com.secondhand.vip.R
+import androidx.fragment.app.DialogFragment
 
-object ContactSellerDialog {
+class ContactSellerDialog : DialogFragment() {
 
-    private const val PHONE = "0963756077"
-    private const val LINE_ID = "0963756077"
-
-    fun show(context: Context) {
-
-        val view = LayoutInflater.from(context)
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        val view = LayoutInflater.from(requireContext())
             .inflate(R.layout.dialog_contact_seller, null)
 
         val txtPhone = view.findViewById<TextView>(R.id.txtPhone)
-        val txtLine = view.findViewById<TextView>(R.id.txtLineId)
+        val txtLineId = view.findViewById<TextView>(R.id.txtLineId)
 
-        // ===== 電話（你現在已 OK，不動）=====
-        txtPhone.text = "撥打賣家電話\n$PHONE"
-
-        // ===== LINE ID（本次重點）=====
-        txtLine.text = "LINE ID：$LINE_ID"
-        txtLine.setTextColor(Color.parseColor("#00B900")) // LINE 綠
-
-        txtLine.setOnClickListener {
-            openLine(context, LINE_ID)
+        txtPhone.setOnClickListener {
+            val intent = Intent(Intent.ACTION_DIAL)
+            intent.data = Uri.parse("tel:0963756077")
+            startActivity(intent)
         }
 
-        AlertDialog.Builder(context)
-            .setView(view)
-            .setCancelable(true)
-            .setPositiveButton("關閉", null)
-            .show()
-    }
-
-    private fun openLine(context: Context, lineId: String) {
-        val uri = Uri.parse("https://line.me/ti/p/~$lineId")
-        val intent = Intent(Intent.ACTION_VIEW, uri)
-
-        try {
-            context.startActivity(intent)
-        } catch (e: ActivityNotFoundException) {
-            // 沒有 LINE → Play 商店
-            val storeIntent = Intent(
-                Intent.ACTION_VIEW,
-                Uri.parse("market://details?id=jp.naver.line.android")
-            )
-            context.startActivity(storeIntent)
+        txtLineId.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse("https://line.me/ti/p/0963756077")
+            startActivity(intent)
         }
+
+        val dialog = Dialog(requireContext())
+        dialog.setContentView(view)
+        dialog.setCancelable(true)
+        return dialog
     }
 }

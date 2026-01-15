@@ -1,0 +1,74 @@
+[
+    {
+        "merged": "com.secondhand.vip.app-mergeDebugResources-31:/layout/bottomsheet_add_success.xml",
+        "source": "com.secondhand.vip.app-main-34:/layout/bottomsheet_add_success.xml"
+    },
+    {
+        "merged": "com.secondhand.vip.app-mergeDebugResources-31:/layout/activity_splash.xml",
+        "source": "com.secondhand.vip.app-main-34:/layout/activity_splash.xml"
+    },
+    {
+        "merged": "com.secondhand.vip.app-mergeDebugResources-31:/layout/item_qa.xml",
+        "source": "com.secondhand.vip.app-main-34:/layout/item_qa.xml"
+    },
+    {
+        "merged": "com.secondhand.vip.app-mergeDebugResources-31:/layout/activity_login.xml",
+        "source": "com.secondhand.vip.app-main-34:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.secondhand.vip.app-mergeDebugResources-31:/layout/activity_product_list.xml",
+        "source": "com.secondhand.vip.app-main-34:/layout/activity_product_list.xml"
+    },
+    {
+        "merged": "com.secondhand.vip.app-mergeDebugResources-31:/layout/activity_add_product.xml",
+        "source": "com.secondhand.vip.app-main-34:/layout/activity_add_product.xml"
+    },
+    {
+        "merged": "com.secondhand.vip.app-mergeDebugResources-31:/layout/dialog_add_question.xml",
+        "source": "com.secondhand.vip.app-main-34:/layout/dialog_add_question.xml"
+    },
+    {
+        "merged": "com.secondhand.vip.app-mergeDebugResources-31:/layout/activity_product_detail.xml",
+        "source": "com.secondhand.vip.app-main-34:/layout/activity_product_detail.xml"
+    },
+    {
+        "merged": "com.secondhand.vip.app-mergeDebugResources-31:/layout/item_question.xml",
+        "source": "com.secondhand.vip.app-main-34:/layout/item_question.xml"
+    },
+    {
+        "merged": "com.secondhand.vip.app-mergeDebugResources-31:/layout/activity_main.xml",
+        "source": "com.secondhand.vip.app-main-34:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.secondhand.vip.app-mergeDebugResources-31:/layout/dialog_line.xml",
+        "source": "com.secondhand.vip.app-main-34:/layout/dialog_line.xml"
+    },
+    {
+        "merged": "com.secondhand.vip.app-mergeDebugResources-31:/layout/sheet_add_success.xml",
+        "source": "com.secondhand.vip.app-main-34:/layout/sheet_add_success.xml"
+    },
+    {
+        "merged": "com.secondhand.vip.app-mergeDebugResources-31:/layout/dialog_contact_seller.xml",
+        "source": "com.secondhand.vip.app-main-34:/layout/dialog_contact_seller.xml"
+    },
+    {
+        "merged": "com.secondhand.vip.app-mergeDebugResources-31:/layout/dialog_line_qr.xml",
+        "source": "com.secondhand.vip.app-main-34:/layout/dialog_line_qr.xml"
+    },
+    {
+        "merged": "com.secondhand.vip.app-mergeDebugResources-31:/layout/dialog_qna.xml",
+        "source": "com.secondhand.vip.app-main-34:/layout/dialog_qna.xml"
+    },
+    {
+        "merged": "com.secondhand.vip.app-mergeDebugResources-31:/layout/item_product.xml",
+        "source": "com.secondhand.vip.app-main-34:/layout/item_product.xml"
+    },
+    {
+        "merged": "com.secondhand.vip.app-mergeDebugResources-31:/layout/sheet_contact_seller.xml",
+        "source": "com.secondhand.vip.app-main-34:/layout/sheet_contact_seller.xml"
+    },
+    {
+        "merged": "com.secondhand.vip.app-mergeDebugResources-31:/layout/item_product_simple.xml",
+        "source": "com.secondhand.vip.app-main-34:/layout/item_product_simple.xml"
+    }
+]

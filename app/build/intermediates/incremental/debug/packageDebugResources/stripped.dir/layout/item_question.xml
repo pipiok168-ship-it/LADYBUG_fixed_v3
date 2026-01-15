@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/bg_champagne_card">
+
+    <TextView
+        android:text="問與答"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#E6C77A"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/edtQuestion"
+        android:hint="輸入你的問題"
+        android:textColor="@android:color/white"
+        android:textColorHint="#888888"
+        android:layout_marginTop="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

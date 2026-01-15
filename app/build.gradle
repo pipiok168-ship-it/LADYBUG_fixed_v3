@@ -1,7 +1,6 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-
 }
 
 android {
@@ -33,11 +32,16 @@ android {
     kotlinOptions {
         jvmTarget = '17'
     }
+
+    // ✅ 關鍵：一定要有
+    buildFeatures {
+        viewBinding true
+        dataBinding false
+    }
 }
 
 dependencies {
 
-    // 🔥 沒有這些，就一定會 Unresolved reference
     implementation 'androidx.core:core-ktx:1.13.1'
     implementation 'androidx.appcompat:appcompat:1.7.0'
     implementation 'com.google.android.material:material:1.12.0'

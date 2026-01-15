@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="14dp"
+    android:layout_marginTop="10dp"
+    android:background="@drawable/bg_champagne_card">
+
+    <!-- 問題 Q -->
+    <TextView
+        android:id="@+id/txtQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Q：問題內容"
+        android:textStyle="bold"
+        android:textColor="#E8C99A"
+        android:textSize="14sp" />
+
+    <!-- 回答 A -->
+    <TextView
+        android:id="@+id/txtAnswer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="A：（尚未回覆）"
+        android:textColor="#DDDDDD"
+        android:textSize="13sp"
+        android:paddingTop="8dp" />
+
+</LinearLayout>

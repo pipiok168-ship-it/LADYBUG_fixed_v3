@@ -24,6 +24,10 @@
         "source": "com.secondhand.vip.app-main-34:/mipmap-hdpi/ic_launcher.webp"
     },
     {
+        "merged": "com.secondhand.vip.app-merged_res-32:/layout_bottomsheet_add_success.xml.flat",
+        "source": "com.secondhand.vip.app-main-34:/layout/bottomsheet_add_success.xml"
+    },
+    {
         "merged": "com.secondhand.vip.app-merged_res-32:/drawable_bg_champagne_button.xml.flat",
         "source": "com.secondhand.vip.app-main-34:/drawable/bg_champagne_button.xml"
     },
@@ -36,10 +40,6 @@
         "source": "com.secondhand.vip.app-main-34:/layout/item_question.xml"
     },
     {
-        "merged": "com.secondhand.vip.app-merged_res-32:/layout_bg_dialog_round.xml.flat",
-        "source": "com.secondhand.vip.app-main-34:/layout/bg_dialog_round.xml"
-    },
-    {
         "merged": "com.secondhand.vip.app-merged_res-32:/drawable_img_card.xml.flat",
         "source": "com.secondhand.vip.app-main-34:/drawable/img_card.xml"
     },
@@ -50,6 +50,10 @@
     {
         "merged": "com.secondhand.vip.app-merged_res-32:/mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
         "source": "com.secondhand.vip.app-main-34:/mipmap-xxxhdpi/ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "com.secondhand.vip.app-merged_res-32:/drawable_bg_dialog_round.xml.flat",
+        "source": "com.secondhand.vip.app-main-34:/drawable/bg_dialog_round.xml"
     },
     {
         "merged": "com.secondhand.vip.app-merged_res-32:/drawable_ic_image_error.xml.flat",
@@ -66,6 +70,10 @@
     {
         "merged": "com.secondhand.vip.app-merged_res-32:/drawable_line_qrcode.jpg.flat",
         "source": "com.secondhand.vip.app-main-34:/drawable/line_qrcode.jpg"
+    },
+    {
+        "merged": "com.secondhand.vip.app-merged_res-32:/layout_sheet_add_success.xml.flat",
+        "source": "com.secondhand.vip.app-main-34:/layout/sheet_add_success.xml"
     },
     {
         "merged": "com.secondhand.vip.app-merged_res-32:/layout_activity_product_detail.xml.flat",
@@ -98,6 +106,10 @@
     {
         "merged": "com.secondhand.vip.app-merged_res-32:/layout_activity_product_list.xml.flat",
         "source": "com.secondhand.vip.app-main-34:/layout/activity_product_list.xml"
+    },
+    {
+        "merged": "com.secondhand.vip.app-merged_res-32:/layout_sheet_contact_seller.xml.flat",
+        "source": "com.secondhand.vip.app-main-34:/layout/sheet_contact_seller.xml"
     },
     {
         "merged": "com.secondhand.vip.app-merged_res-32:/mipmap-anydpi-v26_ic_secondhand_foreground.png.flat",
