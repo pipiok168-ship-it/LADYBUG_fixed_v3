@@ -3008,6 +3008,7 @@ int drawable bg_champagne_button 0x7f07007a
 int drawable bg_champagne_card 0x7f07007b
 int drawable bg_dialog_card 0x7f07007c
 int drawable bg_dialog_round 0x7f07007d
+int drawable bg_product_card 0x7f0700f4
 int drawable bg_qna_glow 0x7f07007e
 int drawable bg_qna_item 0x7f07007f
 int drawable btn_checkbox_checked_mtrl 0x7f070080

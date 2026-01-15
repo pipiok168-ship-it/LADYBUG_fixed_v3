@@ -3009,6 +3009,7 @@ drawable bg_champagne_button
 drawable bg_champagne_card
 drawable bg_dialog_card
 drawable bg_dialog_round
+drawable bg_product_card
 drawable bg_qna_glow
 drawable bg_qna_item
 drawable btn_checkbox_checked_mtrl

@@ -1,40 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:padding="16dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#FFFFFF">
+    android:layout_marginHorizontal="12dp"
+    android:layout_marginVertical="8dp"
+    app:cardCornerRadius="14dp"
+    app:cardElevation="3dp"
+    app:cardUseCompatPadding="true"
+    app:cardBackgroundColor="#FFFFFF">
 
-    <!-- 商品名稱 -->
-    <TextView
-        android:id="@+id/txtName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="商品名稱"
-        android:textSize="17sp"
-        android:textStyle="bold"
-        android:textColor="#1A1A1A"
-        android:letterSpacing="0.02"
-        android:lineSpacingExtra="2dp"/>
-
-    <!-- 價格 -->
-    <TextView
-        android:id="@+id/txtPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:text="NT$ 0"
-        android:textSize="15sp"
-        android:textColor="#8C6A3D" />
-        <!-- 香檳金系 -->
-
-    <!-- 分隔線 -->
-    <View
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="14dp"
-        android:background="#EEEEEE"/>
+        android:layout_height="wrap_content">
 
-</LinearLayout>
+        <!-- 商品名稱 -->
+        <TextView
+            android:id="@+id/txtName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="商品名稱"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textColor="#1A1A1A"
+            android:letterSpacing="0.02"/>
+
+        <!-- 價格 -->
+        <TextView
+            android:id="@+id/txtPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="NT$ 0"
+            android:textSize="15sp"
+            android:textColor="#8C6A3D"/>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

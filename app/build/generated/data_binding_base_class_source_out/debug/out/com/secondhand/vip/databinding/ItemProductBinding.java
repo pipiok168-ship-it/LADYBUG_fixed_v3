@@ -4,10 +4,10 @@ package com.secondhand.vip.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.secondhand.vip.R;
@@ -17,7 +17,7 @@ import java.lang.String;
 
 public final class ItemProductBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final CardView rootView;
 
   @NonNull
   public final TextView txtName;
@@ -25,7 +25,7 @@ public final class ItemProductBinding implements ViewBinding {
   @NonNull
   public final TextView txtPrice;
 
-  private ItemProductBinding(@NonNull LinearLayout rootView, @NonNull TextView txtName,
+  private ItemProductBinding(@NonNull CardView rootView, @NonNull TextView txtName,
       @NonNull TextView txtPrice) {
     this.rootView = rootView;
     this.txtName = txtName;
@@ -34,7 +34,7 @@ public final class ItemProductBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public CardView getRoot() {
     return rootView;
   }
 
@@ -71,7 +71,7 @@ public final class ItemProductBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ItemProductBinding((LinearLayout) rootView, txtName, txtPrice);
+      return new ItemProductBinding((CardView) rootView, txtName, txtPrice);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
