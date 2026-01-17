@@ -1,8 +1,6 @@
 package com.secondhand.vip
 
 import android.app.Activity
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
@@ -35,8 +33,10 @@ class ProductDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_product_detail)
 
+        // ===== API =====
         api = ApiClient.retrofit.create(ApiService::class.java)
 
+        // ===== Views =====
         imgMain = findViewById(R.id.imgMain)
         recyclerThumbs = findViewById(R.id.recyclerThumbs)
         txtName = findViewById(R.id.txtName)
@@ -45,31 +45,41 @@ class ProductDetailActivity : AppCompatActivity() {
         btnContact = findViewById(R.id.btnContact)
         btnDelete = findViewById(R.id.btnDelete)
 
+        // ===== Product =====
         product = intent.getSerializableExtra("product") as Product
 
         txtName.text = product.name ?: ""
         txtPrice.text = "NT$ ${product.price ?: 0}"
         txtDescription.text = product.description ?: ""
 
+        // ===== 多圖來源（正式版，向下相容）=====
         val images = mutableListOf<String>()
-        product.imageUrl?.let {
-            images.add(it)
-            images.add(it)
-            images.add(it)
+        if (product.imageUrls.isNotEmpty()) {
+            images.addAll(product.imageUrls)
+        } else {
+            product.imageUrl?.let { images.add(it) }
         }
 
+        // ===== 預設大圖 =====
         if (images.isNotEmpty()) {
-            Glide.with(this).load(images[0]).centerCrop().into(imgMain)
+            Glide.with(this)
+                .load(images[0])
+                .centerCrop()
+                .into(imgMain)
         }
 
+        // ===== 小圖 RecyclerView =====
         recyclerThumbs.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
-        recyclerThumbs.adapter = ProductImageAdapter(images) {
-            Glide.with(this).load(it).centerCrop().into(imgMain)
+        recyclerThumbs.adapter = ProductImageAdapter(images) { clickedUrl ->
+            Glide.with(this)
+                .load(clickedUrl)
+                .centerCrop()
+                .into(imgMain)
         }
 
-        // 聯絡賣家
+        // ===== 聯絡賣家（BottomSheet）=====
         btnContact.setOnClickListener {
             ContactSellerBottomSheet().show(
                 supportFragmentManager,
@@ -77,7 +87,7 @@ class ProductDetailActivity : AppCompatActivity() {
             )
         }
 
-        // 刪除商品
+        // ===== 刪除商品 =====
         btnDelete.setOnClickListener {
             AlertDialog.Builder(this)
                 .setTitle("刪除商品")
@@ -88,7 +98,7 @@ class ProductDetailActivity : AppCompatActivity() {
                 .setNegativeButton("取消", null)
                 .show()
         }
-    } // ← onCreate 結束（這個就是你之前少的）
+    }
 
     // ===== 刪除商品 API =====
     private fun deleteProduct(id: String) {

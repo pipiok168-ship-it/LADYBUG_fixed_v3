@@ -7,6 +7,7 @@ const ProductSchema = new mongoose.Schema(
     description: { type: String, default: "" },
 
     // ⭐ 舊資料
+
     imageUrl: { type: String, default: "" },
 
     // ⭐ 新：多圖

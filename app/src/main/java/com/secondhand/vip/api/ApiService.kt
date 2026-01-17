@@ -8,21 +8,28 @@ import retrofit2.http.*
 
 interface ApiService {
 
-    // ===== 取得商品列表 =====
+    // ===============================
+    // 取得商品列表
+    // ===============================
     @GET("/api/products")
     fun getProducts(): Call<List<Product>>
 
-    // ===== 新增商品 =====
+    // ===============================
+    // 新增商品（多圖）
+    // ⭐ 只允許 images（List<MultipartBody.Part>）
+    // ===============================
     @Multipart
     @POST("/api/products")
-    fun addProduct(
+    fun addProductMulti(
         @Part("name") name: RequestBody,
         @Part("price") price: RequestBody,
         @Part("description") description: RequestBody,
-        @Part image: MultipartBody.Part?
+        @Part images: List<MultipartBody.Part>
     ): Call<Product>
 
-    // ===== 刪除商品 =====
+    // ===============================
+    // 刪除商品
+    // ===============================
     @DELETE("/api/products/{id}")
     fun deleteProduct(
         @Path("id") id: String
